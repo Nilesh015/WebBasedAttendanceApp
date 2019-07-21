@@ -24,17 +24,19 @@ The following page should be displayed:
 
 ![Image could not be displayed](https://github.com/Nilesh015/WebBasedAttendanceApp/blob/master/Web_Attend/login_page.jpg)  
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Features  
 
 Create a student and a faculty account first. Then create some courses in the faculty account, in which the student can enroll. Here is a preview of a student's details page and a faculty's details page:  
 
+Student Details Page:  
+![Image could not be displayed](https://github.com/Nilesh015/WebBasedAttendanceApp/blob/master/Web_Attend/student_page.jpg)
+
+Faculty Details Page:  
+![Image could not be displayed](https://github.com/Nilesh015/WebBasedAttendanceApp/blob/master/Web_Attend/faculty_page.jpg)  
+
 To start an attendance session, login as Faculty. Enter course details of the course for which you want to start the attendance. Then click 'Start Timer'. The attendance session gets started and the following page is displayed:  
+
+![Image could not be displayed](https://github.com/Nilesh015/WebBasedAttendanceApp/blob/master/Web_Attend/timer_page.jpg)  
 
 Then just login as a student and mark the attendance. A successfully attended message shows up in case of success and the attendance is updated.  
 
