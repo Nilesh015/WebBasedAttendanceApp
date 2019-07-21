@@ -22,8 +22,7 @@ The following steps must be followed to start the application:
 
 The following page should be displayed:  
 
-![alt text](/WebAttend/login_page.jpg)  
-
+![Image could not be displayed](https://github.com/Nilesh015/WebBasedAttendanceApp/blob/master/Web_Attend/login_page.jpg)  
 
 ```
 until finished
