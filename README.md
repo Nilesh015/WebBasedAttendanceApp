@@ -22,6 +22,8 @@ The following steps must be followed to start the application:
 
 The following page should be displayed:  
 
+![alt text](/WebAttend/login_page.jpg)  
+
 
 ```
 until finished
