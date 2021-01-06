@@ -146,10 +146,8 @@ PRIMARY KEY       (id)                                  # Make the id the primar
 (C) Creating Project
 
 >Open Eclipse IDE and Go to New-->Dynamic Web Project. Give the name of your project 'Attendance'
->Extract the zip folder.
->You will get 2 folders, src and Web Content.
 >Go to C:\Users\(Username)\eclipse-workspace\Attendance.
->Copy all the contents of src and Web Content folder extracted from the zip and Paste them in the src and Web Content in "C:\Users\(Username)\eclipse-workspace\Attendance".
+>Copy all the contents of src and Web Content folder of this repo and Paste them in the src and Web Content in "C:\Users\(Username)\eclipse-workspace\Attendance".
 >In your eclipse IDE,right click the project 'Attendance' and click 'Refresh'.
 
 ******************************************************************************************************************************************************************************
@@ -161,7 +159,7 @@ PRIMARY KEY       (id)                                  # Make the id the primar
 >If it shows no server selected, then click the link to add a new server. Select Tomcat v9.0 and click Next.
 >Select the path of the tomcat installation and click Finish to add Tomcat.
 >Refresh the project.
->Copy mysql-connector-java-8.0.13 from extracted zip.
+>Copy mysql-connector-java-8.0.13 from jars folder.
 >In project, go to Java Resources-->Libraries and paste it in "Apache Tomcat v9.0 [Apache Tomcat v9.0]".
 >Copy the remaining four jar files and paste in WebContent-->WEB-INF-->lib.  
 >Refresh the project.
