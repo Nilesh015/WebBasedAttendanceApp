@@ -1,0 +1,188 @@
+WEB BASED ATTENDANCE APP
+
+We have built and tested the app on Windows Operating System. So the steps are for Windows only:
+******************************************************************************************************************************************************************************
+The list of steps are as follows:
+
+(A) Installing External Software:
+
+(1)Install Java-
+>Go to Link: https://www.java.com/en/download/
+>Install Java 8
+
+(2)Install Eclipse IDE-
+	   
+>Go to this Link: https://www.eclipse.org/downloads/packages/release/indigo/sr2/eclipse-ide-java-ee-developers
+>Download the required version of Eclipse according to Operating System(32 bit or 64 bit).        
+>Run Eclipse IDE
+>Go to Help-->Eclipse Marketplace. Search for "Eclipse Java EE Developer Tools 3.13". You will find "Eclipse Java EE Developer Tools 3.13"
+ as one of the search results. Install that plugin.
+ While installing just keep pressing "Next" and the default checked items will be installed.
+
+(3)Install Tomcat Server-
+
+>Go to link for (Tomcat V9.0): https://tomcat.apache.org/download-90.cgi
+>Click on the "32-bit/64-bit Windows Service Installer" to start your download.
+>Run the Tomcat installer and keep proceeding with "Next".
+
+
+(4)Install MySQL-
+>Go to Link: https://dev.mysql.com/downloads/installer/
+>Download the "Windows (x86, 32-bit), MSI Installer (mysql-installer-community-8.0.15.0.msi)" [It is a 324 MB file].
+>Dont change any settings while running the installer.
+>Points to NOTE:   
+       (*)username: root
+       (*)password: nilesh123
+       (*)server: localhost
+       (*)port: 3306
+[These datas have been used in the programs]
+>MySQL Workbench is also installed along with this installer.
+
+******************************************************************************************************************************************************************************
+(B) Creating Databases:
+
+>Open MySQL Workbench.
+>Copy the following code:
+
+******************************************************************************************************************************************************************************
+
+create database student;
+use student;
+SET SQL_SAFE_UPDATES = 0;
+
+CREATE TABLE student_data
+(
+  id              INT unsigned NOT NULL AUTO_INCREMENT, # Unique ID for the record
+  name            VARCHAR(150) NOT NULL,                # Name of the cat
+  rollno          VARCHAR(20) NOT NULL,                # Owner of the cat
+  department	  VARCHAR(50) NOT NULL,
+  Username        VARCHAR(50) NOT NULL,
+  PRIMARY KEY     (id)                                  # Make the id the primary key
+);
+
+
+CREATE TABLE faculty_data
+(
+  id              INT unsigned NOT NULL AUTO_INCREMENT, # Unique ID for the record
+  name            VARCHAR(150) NOT NULL,                # Name of the cat
+  facultyId       VARCHAR(20) NOT NULL,                # Owner of the cat
+  department	  VARCHAR(50) NOT NULL,
+  Username        VARCHAR(50) NOT NULL,
+  PRIMARY KEY     (id)                                  # Make the id the primary key
+);
+
+CREATE TABLE course
+(
+  id              INT unsigned NOT NULL AUTO_INCREMENT, # Unique ID for the record
+  name            VARCHAR(150) NOT NULL,                # Name of the cat
+  courseId        VARCHAR(20) NOT NULL,                # Owner of the cat
+  sem 	          VARCHAR(50) NOT NULL,
+  slot 	          VARCHAR(3) NOT NULL,
+  fname           VARCHAR(50) NOT NULL,
+  PRIMARY KEY     (id)                                  # Make the id the primary key
+);
+
+create table student_course_data
+  (
+  id              INT unsigned NOT NULL AUTO_INCREMENT, # Unique ID for the record
+  course_name     VARCHAR(150) NOT NULL,                # Name of the cat
+  courseId        VARCHAR(20) NOT NULL,                # Owner of the cat
+  sem 	          VARCHAR(50) NOT NULL,
+  slot 	          VARCHAR(3) NOT NULL,       
+  attended        INT unsigned NOT NULL,                # Owner of the cat
+  missed 	      INT unsigned NOT NULL,
+  percentage 	  double unsigned NOT NULL,
+  uname           VARCHAR(150) NOT NULL,
+  PRIMARY KEY     (id)                                  # Make the id the primary key
+);
+
+create table master_student
+  (
+  id              INT unsigned NOT NULL AUTO_INCREMENT, # Unique ID for the record
+  student_name    VARCHAR(150) NOT NULL,
+  roll            VARCHAR(50) NOT NULL,
+  course_name     VARCHAR(150) NOT NULL,                # Name of the cat
+  courseId        VARCHAR(20) NOT NULL,                # Owner of the cat
+  sem 	          VARCHAR(50) NOT NULL,
+  slot 	          VARCHAR(3) NOT NULL,       
+  attended        INT unsigned NOT NULL,                # Owner of the cat
+  missed 	      INT unsigned NOT NULL,
+  percentage 	  double unsigned NOT NULL,
+  uname           VARCHAR(150) NOT NULL,
+  PRIMARY KEY     (id)                                  # Make the id the primary key
+);
+
+create table attendance_status
+  (
+  id              INT unsigned NOT NULL AUTO_INCREMENT, # Unique ID for the record
+  uname           VARCHAR(150) NOT NULL,
+  course_name     VARCHAR(150) NOT NULL,                # Name of the cat
+  courseId        VARCHAR(20) NOT NULL,                # Owner of the cat
+  sem 	          VARCHAR(50) NOT NULL,
+  slot 	          VARCHAR(3) NOT NULL,       
+  status          INT unsigned NOT NULL,
+  PRIMARY KEY     (id)                                  # Make the id the primary key
+);
+
+create table start_attendance
+(
+id                INT unsigned NOT NULL AUTO_INCREMENT,
+courseId          VARCHAR(20) NOT NULL,                # Owner of the cat
+sem 	          VARCHAR(50) NOT NULL,
+slot 	          VARCHAR(3) NOT NULL,  
+username          VARCHAR(150) NOT NULL,
+endTime           BIGINT NOT NULL,
+pin               VARCHAR(10) NOT NULL,
+PRIMARY KEY       (id)                                  # Make the id the primary key  
+);
+
+******************************************************************************************************************************************************************************
+>Make sure to run every line.
+>You can use "show tables" and "select * from (table name)" to see if the tables are created properly.
+
+
+******************************************************************************************************************************************************************************
+
+(C) Creating Project
+
+>Open Eclipse IDE and Go to New-->Dynamic Web Project. Give the name of your project 'Attendance'
+>Extract the zip folder.
+>You will get 2 folders, src and Web Content.
+>Go to C:\Users\(Username)\eclipse-workspace\Attendance.
+>Copy all the contents of src and Web Content folder extracted from the zip and Paste them in the src and Web Content in "C:\Users\(Username)\eclipse-workspace\Attendance".
+>In your eclipse IDE,right click the project 'Attendance' and click 'Refresh'.
+
+******************************************************************************************************************************************************************************
+
+(D) Adding Dependencies:
+
+>In Eclipse IDE, right click 'Attendance' and go to Properties-->Project Facets-->Runtimes. Check Apache Tomcat v9.0.Apply and Close.
+>In Eclipse IDE you will find a 'Servers' tab in the bottom part along with Snippets,Console,Markers,etc.
+>If it shows no server selected, then click the link to add a new server. Select Tomcat v9.0 and click Next.
+>Select the path of the tomcat installation and click Finish to add Tomcat.
+>Refresh the project.
+>Copy mysql-connector-java-8.0.13 from extracted zip.
+>In project, go to Java Resources-->Libraries and paste it in "Apache Tomcat v9.0 [Apache Tomcat v9.0]".
+>Copy the remaining four jar files and paste in WebContent-->WEB-INF-->lib.  
+>Refresh the project.
+
+******************************************************************************************************************************************************************************
+
+(D) Running the Software:
+
+>In Eclipse IDE,open login.jsp.
+>Right click and select Run As-->Run on Server.
+>This will start the application on localhost.
+
+**FOR Testing Mark Attendance:**
+>See the link of the login page loaded. Copy this link and paste it in a 2nd Web Browser. [For example if 1st login is run on Chrome, 2nd one is run on Firefox or Internet Explorer].
+>Now use the Chrome session to login as a faculty.
+>Start the attendance with required information.
+>Do not Log out or press Confirm Attendance.
+>Open the Internet Explorer window and login as a student.
+>Mark attendance by giving appropriate data and PIN.
+>Once attendance is marked confirm from the Chrome window again.
+
+
+******************************************************************************************************************************************************************************
+THANK YOU
