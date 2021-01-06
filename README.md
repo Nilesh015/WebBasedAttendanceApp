@@ -12,13 +12,10 @@ The following are required for running the web based application:
 
 ### Running the WebApp
 
+Follow all instructions in the instructions.txt file.  
 The following steps must be followed to start the application:  
-1) Create a new 'Dynamic Web Project' in Eclipse IDE by the name 'WebAttend'.  
-2) Copy the folder 'com' and all the other files in the 'WebAttend' directory given in the repository.  
-3) Select Apache Tomcat as the server.  
-3) Download and put 'mysql-connector-java-8.0.13.jar' as a Tomcat dependency.  
-4) The other .jar files are put as Web App Libraries.  
-5) Go to login.jsp, Right click and select Run As --> Run on Server.  
+1) Open project in Eclipse IDE.   
+2) Go to login.jsp, Right click and select Run As --> Run on Server.  
 
 The following page should be displayed:  
 
