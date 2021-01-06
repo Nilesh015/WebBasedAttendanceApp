@@ -147,7 +147,7 @@ PRIMARY KEY       (id)                                  # Make the id the primar
 
 >Open Eclipse IDE and Go to New-->Dynamic Web Project. Give the name of your project 'Attendance'
 >Go to C:\Users\(Username)\eclipse-workspace\Attendance.
->Copy all the contents of WebAttend/com folder of this repo and Paste them in the src folder of "C:\Users\(Username)\eclipse-workspace\Attendance". Copy the rest of the files of WebAttend folder and paste in the WebContent folder.
+>Copy all the contents of Web_Attend/com folder of this repo and Paste them in the src folder of "C:\Users\(Username)\eclipse-workspace\Attendance". Copy the rest of the files of Web_Attend folder and paste in the WebContent folder.
 >In your eclipse IDE,right click the project 'Attendance' and click 'Refresh'.
 
 ******************************************************************************************************************************************************************************
